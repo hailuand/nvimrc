@@ -27,7 +27,6 @@ local plugins = {
   {
     "mfussenegger/nvim-dap",
     config = function(_, opts)
-      require "custom.configs.dap"
       require("core.utils").load_mappings("dap")
     end
   },
@@ -47,6 +46,7 @@ local plugins = {
   },
   {
     "nvimtools/none-ls.nvim",
+    event = "VeryLazy",
     ft = {
       "go",
       "python",
@@ -71,10 +71,9 @@ local plugins = {
         "ruff-lsp",
         "pyright",
         "typescript-language-server",
+        "tailwindcss-language-server",
         "eslint-lsp",
         "prettierd",
-        "eslint_d",
-        "js-debug-adapter",
       },
     },
   },
@@ -85,5 +84,35 @@ local plugins = {
       require "custom.configs.lspconfig"
     end,
   },
+  {
+    "windwp/nvim-ts-autotag",
+    ft = {
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "html",
+      "markdown",
+      "xml",
+    },
+    config = function ()
+      require("nvim-ts-autotag").setup()
+    end
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+     opts = function()
+      opts = require "plugins.configs.treesitter"
+      opts.ensure_installed = {
+        "lua",
+        "javascript",
+        "typescript",
+        "tsx",
+        "go",
+        "python",
+        "css",
+      }
+     end
+  }
 }
 return plugins

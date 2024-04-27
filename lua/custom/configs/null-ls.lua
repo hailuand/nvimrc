@@ -17,7 +17,6 @@ local opts = {
     }),
     -- javascript & typescript
     null_ls.builtins.formatting.prettierd,
-    require("none-ls.diagnostics.eslint_d"),
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then

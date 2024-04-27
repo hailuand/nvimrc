@@ -29,13 +29,24 @@ lspconfig.gopls.setup {
     }
   },
 }
+
+for _, lsp in ipairs {"tsserver", "tailwindcss", "eslint", "cssls"} do
+  lspconfig[lsp].setup {}
+end
 -- TypeScript
-lspconfig.tsserver.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  init_options = {
-    preferences = {
-      disableSuggestions = true,
-    }
-  }
-}
+--lspconfig.tsserver.setup {
+--  on_attach = on_attach,
+--  capabilities = capabilities,
+--  init_options = {
+--    preferences = {
+--      disableSuggestions = true,
+--    }
+--  }
+--}
+---- eslint
+--lspconfig.
+---- Tailwind CSS
+--lspconfig.tailwindcss.setup {
+--  on_attach = on_attach,
+--  capabilities = capabilities,
+--}
