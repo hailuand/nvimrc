@@ -74,6 +74,7 @@ local plugins = {
         "tailwindcss-language-server",
         "eslint-lsp",
         "prettierd",
+        "svelte-language-server",
       },
     },
   },
@@ -111,6 +112,7 @@ local plugins = {
         "go",
         "python",
         "css",
+        "svelte",
       }
      end
   }
