@@ -75,6 +75,8 @@ local plugins = {
         "eslint-lsp",
         "prettierd",
         "svelte-language-server",
+        "csharp-language-server",
+        "marksman",
       },
     },
   },
@@ -113,6 +115,8 @@ local plugins = {
         "python",
         "css",
         "svelte",
+        "c_sharp",
+        "markdown",
       }
      end
   }

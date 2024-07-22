@@ -35,7 +35,18 @@ lspconfig.svelte.setup({
   capabilities = capabilities,
   filetypes = {"svelte"},
 })
-
+-- C#
+lspconfig.csharp_ls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"cs"}
+})
+-- Markdown
+lspconfig.marksman.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"markdown"},
+})
 
 for _, lsp in ipairs {"tsserver", "tailwindcss", "eslint", "cssls"} do
   lspconfig[lsp].setup {}
